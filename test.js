@@ -1,6 +1,5 @@
-var a = [5, 8, 7, 3, 1];
-a.sort((a, b)=>{
-  return a-b < 0;
-})
+var pat3 = /^([1-9]\d*|0|0\.|[1-9]\d*\.)(\d{1,2})?$/;
 
-console.log(a);
+var str = '0.1';
+
+console.log(pat3.test(str));
