@@ -106,8 +106,4 @@ class Bus {
 }
 
 
-module.exports = {
-	wangBus: new Bus()
-}
-
 
