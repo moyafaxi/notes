@@ -1,5 +1,9 @@
-var pat3 = /^([1-9]\d*|0|0\.|[1-9]\d*\.)(\d{1,2})?$/;
+const wangBus = require('./Design_Patterns/Observer-Pattern').wangBus
 
-var str = '0.1';
+wangBus.on('test', (res)=>{
+  console.log(res)
+})
 
-console.log(pat3.test(str));
+wangBus.off('qjwhejk')
+
+wangBus.fire('test', 'zxvczxvzxv');

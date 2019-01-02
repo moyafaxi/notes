@@ -26,5 +26,12 @@ for(let i=0; i<tarArr.length; i++) {
     ret.push(tarArr[i].match(pattern)[2]);
 };
 
-console.log(ret);
+
+
+var pat = /(?:HTTP_BASE_URL: getHttpBaseUrl\(')+(test)+('\))/;
+var str = "HTTP_BASE_URL: getHttpBaseUrl('test')";
+var env = 'pro';
+
+console.log(str.replace(pat, 'HTTP_BASE_URL: getHttpBaseUrl('+env+')'));
+
 
