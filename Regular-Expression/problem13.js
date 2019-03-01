@@ -16,6 +16,7 @@ var str = '<p>内容1</p><p>内容2</p>';
 
 var pattern = /(?:<p>)+(.*)+(?:<\/p>)/;
 
-console.log(str.match(pattern));
+
+console.log(str.replace(/<[^>]+>/g,""));
 
 // console.log(pattern.exec(str));

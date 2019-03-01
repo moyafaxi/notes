@@ -15,12 +15,11 @@ class Subject { // 主题
 	attach(ob) {
 		this.subscribers.push(ob)
 	}
-
 }
 
 
 class Subscriber { // 订阅者
-	constructor() {
+	constructor() { 
 		this.cb = null; // 订阅者注册 在主题更新时执行的回调方法
 		this.subject = null; // 订阅的主题
 	}
@@ -86,7 +85,7 @@ class Bus {
 	 */
 	fire(subjectName, data) {
 		let tarSubject = this.subjectArr.find(item => {
-			return item.name == subjectName
+			return item.name === subjectName
 		});
 		if (tarSubject) tarSubject.notify(data);
 		this.historyFires[subjectName] = data; // 更新最后一次触发时传入的data
@@ -94,7 +93,7 @@ class Bus {
 
 	// 取消事件监听
 	off(subjectName) {
-		if (this.subjectIsExist(subjectName)) { // 不存在直接实例化当前主题 并推入主题数组
+		if (this.subjectIsExist(subjectName)) { // 找到目标主题
 			let idx = this.subjectArr.findIndex((item) => {
 				return item.name === subjectName
 			})
